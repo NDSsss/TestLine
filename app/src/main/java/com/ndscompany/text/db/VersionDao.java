@@ -18,7 +18,7 @@ public interface VersionDao {
     @Query("SELECT * FROM Version")
     List<Version> getVersions();
 
-    @Query("SELECT * FROM Version WHERE id = :projectId")
+    @Query("SELECT * FROM Version WHERE projectId = :projectId")
     List<Version> getVersionsByProjectId(long projectId);
 
     @Insert

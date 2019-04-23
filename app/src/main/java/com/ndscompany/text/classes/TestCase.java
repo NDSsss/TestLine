@@ -8,6 +8,9 @@ import android.os.Parcelable;
 
 @Entity(foreignKeys = @ForeignKey(entity = Version.class, parentColumns = "id", childColumns = "versionId"))
 public class TestCase implements Parcelable {
+    public static final int WORK = 0;
+    public static final int NOT = 1;
+    public static final int BLOCKED = 2;
     @PrimaryKey(autoGenerate = true)
     private long id;
     private String name;

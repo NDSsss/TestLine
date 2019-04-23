@@ -47,7 +47,7 @@ public class VersionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder viewHolder, int i) {
         if(viewHolder instanceof ViewHolderItem){
             ViewHolderItem viewHolderItem = (ViewHolderItem) viewHolder;
-            viewHolderItem.tvName.setText(String.valueOf(versions.get(i).getProjectId())+" версия " + versions.get(i).getName());
+            viewHolderItem.tvName.setText(versions.get(i).getName());
         }
     }
 
@@ -59,7 +59,7 @@ public class VersionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
             if (position < versions.size()) {
                 return TYPE_ITEM;
             } else {
-                return TYPE_ITEM;
+                return TYPE_FOOTER;
             }
         }
     }
@@ -75,6 +75,14 @@ public class VersionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
         public ViewHolderItem(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_item_version_name);
+            tvName.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if(versionsAdapterinterface != null){
+                        versionsAdapterinterface.openTestCases(versions.get(getAdapterPosition()).getId());
+                    }
+                }
+            });
         }
     }
 
@@ -97,5 +105,6 @@ public class VersionsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     public interface VersionsAdapterinterface{
         void addVersion();
+        void openTestCases(long versionId);
     }
 }

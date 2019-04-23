@@ -2,4 +2,5 @@
     <string name="app_name">TestLine</string>
     <string name="add_project">Добавить проект</string>
     <string name="add_version">Добавить версию</string>
+    <string name="add_test_case">Добавить тест кейс</string>
 </resources>

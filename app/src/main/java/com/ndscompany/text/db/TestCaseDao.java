@@ -17,7 +17,7 @@ public interface TestCaseDao {
     @Query("SELECT * FROM TestCase")
     List<TestCase> getTestCases();
 
-    @Query("SELECT * FROM TestCase WHERE id = :versionId")
+    @Query("SELECT * FROM TestCase WHERE versionId = :versionId")
     List<TestCase> getTestCasesByVersionId(long versionId);
 
     @Insert

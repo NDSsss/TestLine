@@ -14,7 +14,7 @@ import com.ndscompany.text.R;
 
 public class AddVersionDialog extends DialogFragment {
 
-    public static final String TAG = "AddVersionDialog.TAG";
+    public static final String TAG = "AddTestCaseDialog.TAG";
 
     private AddProjectDialogInterface addProjectDialogInterface;
     private EditText editText;
