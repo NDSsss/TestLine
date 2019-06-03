@@ -1,13 +1,21 @@
 package com.ndscompany.text.cases;
 
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.NotificationCompat;
+import android.support.v4.app.NotificationManagerCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.widget.RemoteViews;
 
 import com.ndscompany.text.R;
+import com.ndscompany.text.Service.MyForegroundService;
 import com.ndscompany.text.app.App;
 import com.ndscompany.text.cases.adddialog.AddTestCaseDialog;
 import com.ndscompany.text.classes.TestCase;
@@ -17,6 +25,7 @@ import java.util.List;
 
 public class CasesActivity extends AppCompatActivity implements CasesAdapter.TestCaseListener {
     public static final String VERSION_ID = "CasesActivity.VERSION_ID";
+    public static final String CHANNEL_ID = "TEST_LINE_CHANNEL_ID";
 
     private long versionId;
     private RecyclerView recyclerView;
@@ -36,6 +45,13 @@ public class CasesActivity extends AppCompatActivity implements CasesAdapter.Tes
         adapter.setTestCases(testCases);
         adapter.setListener(this);
         recyclerView.setAdapter(adapter);
+        Intent intent = new Intent(this, MyForegroundService.class);
+        intent.setAction(MyForegroundService.ACTION_START_FOREGROUND_SERVICE);
+        Bundle bundle = new Bundle();
+        bundle.putLong(MyForegroundService.VERSION_ID, versionId);
+        intent.putExtras(bundle);
+        Log.d("FOREGROUND_SERVICE", "onCreate: start service");
+        startService(intent);
     }
 
     private void getExtras(){
