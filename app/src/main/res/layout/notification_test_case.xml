@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="256dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv_notification_title"
+        android:layout_width="match_parent"
+        android:layout_height="40dp" />
+
+    <TextView
+        android:textColor="@color/black"
+        android:maxHeight="100dp"
+        android:scrollbars="vertical"
+        android:id="@+id/tv_notification_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="5"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <Button
+            android:layout_margin="-3dp"
+            android:padding="-4dp"
+            android:id="@+id/btn_notification_prev"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Прев"
+            android:textSize="10dp" />
+
+        <Button
+            android:layout_margin="-3dp"
+            android:padding="-4dp"
+            android:id="@+id/btn_notification_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="+"
+            android:textSize="10dp" />
+
+        <Button
+            android:layout_margin="-3dp"
+            android:padding="-4dp"
+            android:id="@+id/btn_notification_fail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="-"
+            android:textSize="10dp" />
+
+        <Button
+            android:layout_margin="-3dp"
+            android:padding="-4dp"
+            android:id="@+id/btn_notification_block"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Блок"
+            android:textSize="10dp" />
+
+        <Button
+            android:layout_margin="-3dp"
+            android:padding="-4dp"
+            android:id="@+id/btn_notification_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="След"
+            android:textSize="10dp" />
+    </LinearLayout>
+
+</LinearLayout>

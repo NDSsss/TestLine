@@ -7,6 +7,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,9 +55,16 @@ public class VersionsFragment extends Fragment implements VersionsAdapter.Versio
         versions = App.getInstanse().getDatabase().versionDao().getVersionsByProjectId(projectId);
     }
 
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        Log.d("VersionsFragment", "onActivityCreated: ");
+    }
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        Log.d("VersionsFragment", "onCreateView: ");
         View view = inflater.inflate(R.layout.fragment_versions, container,false);
         rvVersions = view.findViewById(R.id.rv_fragment_versions);
         return view;

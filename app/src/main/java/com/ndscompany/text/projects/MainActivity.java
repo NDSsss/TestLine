@@ -4,6 +4,7 @@ import android.support.v4.app.DialogFragment;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("MainActivity", "onCreate: ");
         setContentView(R.layout.activity_projects);
         adapter = new ProjectsAdapter(getSupportFragmentManager(), App.getInstanse().getDatabase().projectDao().getProjects());
         vpProjects = findViewById(R.id.vp_activity_projects);

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="64dp">
+    <TextView
+        android:textColor="@color/black"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@id/btn_notification_testcase_small_fail"
+        android:id="@+id/tv_notification_testcase_small_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:textColor="@color/black"
+        android:id="@+id/tv_notification_testcase_small_description"
+        android:layout_below="@id/btn_notification_testcase_small_fail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+    <Button
+        style="@style/Buttons"
+        android:text="+"
+        android:layout_alignParentRight="true"
+        android:id="@+id/btn_notification_testcase_small_success"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+    <Button
+        style="@style/Buttons"
+        android:text="-"
+        android:id="@+id/btn_notification_testcase_small_fail"
+        android:layout_toLeftOf="@id/btn_notification_testcase_small_success"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp" />
+</RelativeLayout>

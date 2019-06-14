@@ -51,7 +51,7 @@ public class CasesActivity extends AppCompatActivity implements CasesAdapter.Tes
         bundle.putLong(MyForegroundService.VERSION_ID, versionId);
         intent.putExtras(bundle);
         Log.d("FOREGROUND_SERVICE", "onCreate: start service");
-        startService(intent);
+//        startService(intent);
     }
 
     private void getExtras(){
